@@ -1,9 +1,12 @@
-// 1
-///////////
 
-// Il computer deve generare 16 numeri casuali tra 1 e 100.
-// I numeri non possono essere duplicati.
-//
+
+
+/**
+ * verifica se elemento è presente nella lista.
+ *
+ * @param {array}  numero da verificare.
+ * @return {boolean}
+ */
 function isInList (lista, target){
   var lista;
   // console.log(lista);
@@ -20,11 +23,33 @@ function isInList (lista, target){
   return control;
 }
 
+// BONUS
+///////////////
+// all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali:
+// con difficoltà 0 => tra 1 e 100
+// con difficoltà 1 =>  tra 1 e 80
+// con difficoltà 2 => tra 1 e 50
+var selezioneUtenteDifficolta = Number(prompt('inserisci la difficoltà con un numero da 1 a 3'));
+var difficolta;
+if (selezioneUtenteDifficolta == 1) {
+  difficolta = 100;
+}else if(selezioneUtenteDifficolta == 2){
+  difficolta = 80;
+}else if(selezioneUtenteDifficolta == 3){
+  difficolta = 50;
+}
+
+
+// 1
+///////////
+// Il computer deve generare 16 numeri casuali tra 1 e 100.
+// I numeri non possono essere duplicati.
+//
 
 var numeriVietati = [];
 var contatoreVietati = 0;
 while (contatoreVietati !== 16) {
-  var randomNumber = Math.floor(Math.random() * (50 - 1 + 1) ) + 1;
+  var randomNumber = Math.floor(Math.random() * (difficolta - 1 + 1) ) + 1;
   if (isInList(numeriVietati, randomNumber) == false) {
     numeriVietati.push(randomNumber);
     contatoreVietati++;
@@ -49,7 +74,7 @@ console.log(numeriVietati);
 var contatoreGioco = 0;
 var listaNumeriUtente = [];
 var exit = true;
-while (contatoreGioco < (20 - 16) && exit == true) {
+while (contatoreGioco < (difficolta - 16) && exit == true) {
   var numeroUtente = prompt('inserisci un numero')
   if (isInList(numeriVietati, numeroUtente)) {
     console.log('hai parso');
@@ -65,17 +90,10 @@ while (contatoreGioco < (20 - 16) && exit == true) {
   }
   console.log(numeroUtente,listaNumeriUtente,contatoreGioco)
 }
-if (contatoreGioco  == (20 - 16)) {
-  console.log('hai vinto con un punteggio di ' + contatoreGioco);
-}
-
-
-
-
-
-
-
 // 4
 ////////
 
 // Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
+if (contatoreGioco  == (difficolta - 16)) {
+  console.log('hai vinto con un punteggio di ' + contatoreGioco);
+}

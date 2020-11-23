@@ -83,6 +83,8 @@ while (contatoreGioco < (difficolta - 16) && exit == true) {
     alert('hai gia inserito questo numero, inserisci un numero che non hai già inserito');
   }else if(numeroUtente == '' || null){
     alert('il carattere che hai inserito non è un carattere valido, inserisci un numero');
+  }else if(numeroUtente > difficolta){
+    alert('il numero che hai inserito non è valido');
   }
   else{
     listaNumeriUtente.push(numeroUtente);

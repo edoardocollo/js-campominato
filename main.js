@@ -77,7 +77,7 @@ var exit = true;
 while (contatoreGioco < (difficolta - 16) && exit == true) {
   var numeroUtente = prompt('inserisci un numero')
   if (isInList(numeriVietati, numeroUtente)) {
-    console.log('hai parso');
+    console.log('hai parso con un punteggio di ' + contatoreGioco);
     exit = false;
   }else if(isInList(listaNumeriUtente, numeroUtente)) {
     alert('hai gia inserito questo numero, inserisci un numero che non hai già inserito');

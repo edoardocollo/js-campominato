@@ -31,14 +31,33 @@ function isInList (lista, target){
 // con difficoltà 2 => tra 1 e 50
 var selezioneUtenteDifficolta = Number(prompt('inserisci la difficoltà con un numero da 1 a 3'));
 var difficolta;
-if (selezioneUtenteDifficolta == 1) {
-  difficolta = 100;
-}else if(selezioneUtenteDifficolta == 2){
-  difficolta = 80;
-}else if(selezioneUtenteDifficolta == 3){
-  difficolta = 50;
-}
+// if (selezioneUtenteDifficolta == 1) {
+//   difficolta = 100;
+// }else if(selezioneUtenteDifficolta == 2){
+//   difficolta = 80;
+// }else if(selezioneUtenteDifficolta == 3){
+//   difficolta = 50;
+// }
+var selezioneError = true;
 
+  switch (selezioneUtenteDifficolta) {
+    case 1:
+    difficolta = 100;
+
+    break;
+    case 2:
+    difficolta = 80;
+
+    break;
+    case 3:
+    difficolta = 50;
+
+    break;
+    default:
+    difficolta = 100;
+    alert('la selezione che hai compiuto non è valida! Il livello di difficoltà verrà settato a 1. Buona partita')
+    break;
+  }
 
 // 1
 ///////////
@@ -74,6 +93,7 @@ console.log(numeriVietati);
 var contatoreGioco = 0;
 var listaNumeriUtente = [];
 var exit = true;
+
 while (contatoreGioco < (difficolta - 16) && exit == true) {
   var numeroUtente = prompt('inserisci un numero')
   if (isInList(numeriVietati, numeroUtente)) {

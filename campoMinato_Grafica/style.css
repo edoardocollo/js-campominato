@@ -1,0 +1,34 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#main_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: lightgray;
+}
+#play_ground {
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+  width: 500px;
+  background-color: red;
+}
+.casella {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  background-color: gray;
+}
+.hide_cell {
+  opacity: 0;
+  transition: all 1s linear;
+}
